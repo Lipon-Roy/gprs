@@ -4,13 +4,9 @@ const display = document.getElementById('display');
     getLocation();
 })();
 
-setInterval(() => {
-    getLocation();
-}, 1000);
-
 function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.watchPosition(showPosition);
     } else {
         display.innerHTML = 'Geolocation is not supported by this browser';
     }
