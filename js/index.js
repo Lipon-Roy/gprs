@@ -8,7 +8,7 @@ function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(showPosition, null, {
             enableHighAccuracy: true,
-            timeout: Infinity,
+            timeout: 5000,
             maximumAge: 0
         });
     } else {
