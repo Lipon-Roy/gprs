@@ -6,7 +6,11 @@ const display = document.getElementById('display');
 
 function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(showPosition);
+        navigator.geolocation.watchPosition(showPosition, null, {
+            enableHighAccuracy: true,
+            timeout: Infinity,
+            maximumAge: 0
+        });
     } else {
         display.innerHTML = 'Geolocation is not supported by this browser';
     }
